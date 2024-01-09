@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Clicker Game</title>
     <style>
@@ -9,40 +8,33 @@
             padding: 0;
             font-family: "Renogare Soft";
             box-sizing: border-box;
-            
         }
         /* Add some modern styling here */
         @import url('https://flux.moe/theming/plum.css');
-
         @font-face {
             font-family: "Renogare Soft";
             src: url("https://fluxis.flux.moe/src/assets/font/RenogareSoft.ttf");
         }
-
         body {
             text-align: center;
             font-family: Renogare Soft, sans-serif;
             background-color: #D4AFB9;
         }
-
         h1 {
             color: #333;
             font-size: 36px;
             margin-top: 50px;
         }
-
         p {
             color: #666;
             font-size: 18px;
             margin-bottom: 20px;
         }
-
         #score {
             font-size: 48px;
             margin-bottom: 20px;
             color: #333;
         }
-
         #click-button {
             padding: 15px 50px;
             /* Updated padding to make the button wider */
@@ -54,7 +46,6 @@
             border-radius: 5px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
         }
-
         #auto-click-button {
             padding: 15px 50px;
             /* Updated padding to make the button wider */
@@ -68,15 +59,12 @@
         }
     </style>
 </head>
-
 <body>
     <h1>Clicker Game</h1>
     <p>Click the button to increase your score:</p>
     <button id="click-button">Click Me!</button>
-
     <p>Click the auto-click button to automatically increase your score:</p>
     <button id="auto-click-button">Auto-Click</button>
-
     <script>
         // JavaScript code for the clicker game
         var score = localStorage.getItem('score') || 0;
@@ -84,16 +72,13 @@
         var clickButton = document.getElementById('click-button');
         var autoClickButton = document.getElementById('auto-click-button');
         var autoClickInterval;
-
         clickButton.textContent = score;
-
         clickButton.addEventListener('click', function () {
             score++;
             clickButton.textContent = score;
             scoreElement.textContent = score;
             localStorage.setItem('score', score);
         });
-
         autoClickButton.addEventListener('click', function () {
             if (score >= 20) {
                 score -= 20;
@@ -110,5 +95,4 @@
         });
     </script>
 </body>
-
 </html>
